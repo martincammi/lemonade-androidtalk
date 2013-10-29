@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- clase creada por mi -->
+    <string-array name="main_activity_menu_items">
+        <item>Other Apps</item>
+        <item>Google API</item>
+        <item>WebService</item>
+        <item>DataBase</item>
+    </string-array>
+</resources>

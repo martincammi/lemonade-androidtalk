@@ -32,18 +32,14 @@ public class MainActivity extends Activity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
-		//
 		super.onCreate(savedInstanceState);
 		
 		//muestro la pantalla definida en activity_main.xml
 		setContentView(R.layout.activity_main);
 		
-		//
-		menu.add("Other Apps");
-		menu.add("Google Api");
-		menu.add("Webservice");
-		menu.add("Database");
+		//agrego los items del menu (definidos en un array de strings en string_arrays.xml)
+		for(String menuItem: getResources().getStringArray(R.array.main_activity_menu_items))
+			menu.add(menuItem);
 		
 		//obtengo un widget (list view) definido en el layout (activity_main.xml)
         listView = (ListView) findViewById(R.id.rest_list_view);
