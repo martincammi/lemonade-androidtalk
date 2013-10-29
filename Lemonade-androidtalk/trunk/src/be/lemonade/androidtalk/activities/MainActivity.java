@@ -3,16 +3,13 @@ package be.lemonade.androidtalk.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import be.lemonade.androidtalk.R;
-import be.lemonade.androidtalk.R.id;
-import be.lemonade.androidtalk.R.layout;
-import be.lemonade.androidtalk.R.menu;
-import be.lemonade.androidtalk.controllers.MainActivityController;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ListView;
+import be.lemonade.androidtalk.R;
+import be.lemonade.androidtalk.controllers.Controller;
+import be.lemonade.androidtalk.controllers.MainActivityController;
 
 /**
  * Actividad principal
@@ -24,7 +21,7 @@ public class MainActivity extends Activity {
 	//Model View Controller
 	private List<String> menu = new ArrayList<String>();
 	private ListView listView;
-	private MainActivityController controller;
+	private Controller controller;
 	
 	/*
 	 * (non-Javadoc)
@@ -41,7 +38,7 @@ public class MainActivity extends Activity {
 		for(String menuItem: getResources().getStringArray(R.array.main_activity_menu_items))
 			menu.add(menuItem);
 		
-		//obtengo un widget (list view) definido en el layout (activity_main.xml)
+		//obtengo un view (list view en este caso) definido en el layout (activity_main.xml)
         listView = (ListView) findViewById(R.id.rest_list_view);
         
         //creo e inicializo un controlador para la actividad
