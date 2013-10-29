@@ -4,7 +4,7 @@
     <string-array name="main_activity_menu_items">
         <item>Other Apps</item>
         <item>Google API</item>
-        <item>WebService</item>
+        <item>Rest Web Service</item>
         <item>DataBase</item>
     </string-array>
 </resources>
