@@ -14,6 +14,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ListView;
 
+/**
+ * Actividad principal
+ * @author Martin Cammi
+ *
+ */
 public class MainActivity extends Activity {
 
 	//Model View Controller
@@ -21,26 +26,42 @@ public class MainActivity extends Activity {
 	private ListView listView;
 	private MainActivityController controller;
 	
+	/*
+	 * (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+		//
 		super.onCreate(savedInstanceState);
+		
+		//muestro la pantalla definida en activity_main.xml
 		setContentView(R.layout.activity_main);
 		
+		//
 		menu.add("Other Apps");
 		menu.add("Google Api");
 		menu.add("Webservice");
 		menu.add("Database");
 		
+		//obtengo un widget (list view) definido en el layout (activity_main.xml)
         listView = (ListView) findViewById(R.id.rest_list_view);
+        
+        //creo e inicializo un controlador para la actividad
         controller = new MainActivityController(menu, listView, this);
         controller.initialize();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
+		
+		//agrego un meno definido en main.xml para que aparezca al apretar la tecla de menu del telefono
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
 }
